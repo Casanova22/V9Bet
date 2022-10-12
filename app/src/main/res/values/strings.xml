@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">V9Bet</string>
+    <string name="dang_ky">Đăng Ký</string>
+    <string name="dang_nhap">Đăng nhập</string>
+    <string name="khuyen_mai">khuyến mãi</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="applogo">Applogo</string>
+    <string name="image_button">image_button</string>
+    <string name="play_again">Play again?</string>
+    <string name="confirm">Okay</string>
+    <string name="cancel">No</string>
+</resources>

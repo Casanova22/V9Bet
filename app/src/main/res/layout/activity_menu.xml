@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+
+    <ImageView
+        android:id="@+id/menuBg"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/menu_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="80dp"
+        android:rotationX="360"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@string/applogo"
+            android:src="@drawable/image_title"
+            tools:ignore="ImageContrastCheck" />
+    </FrameLayout>
+
+<!--        <FrameLayout-->
+<!--            android:id="@+id/flContainer2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="480dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/flContainer">-->
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="80dp"
+        android:layout_margin="50dp"
+        android:background="@drawable/button_state_selector"
+        android:text="@string/dang_ky"
+        android:textColor="@drawable/color"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/flContainer"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="50dp"
+        android:background="@drawable/button_state_selector"
+        android:text="@string/dang_nhap"
+        android:textColor="@drawable/color"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn1" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="50dp"
+        android:background="@drawable/button_state_selector"
+        android:text="@string/khuyen_mai"
+        android:textColor="@drawable/color"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

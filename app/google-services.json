@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "919617806431",
+    "project_id": "v9bet-a2701",
+    "storage_bucket": "v9bet-a2701.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919617806431:android:d3a786ccbd93907632bbea",
+        "android_client_info": {
+          "package_name": "com.app.v9bet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919617806431-toa1qjffb505gur557lmqnsm9rpkjant.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4IofdoQ5PVOOjckuXaK9n2NxGlJQMU1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919617806431-toa1qjffb505gur557lmqnsm9rpkjant.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
