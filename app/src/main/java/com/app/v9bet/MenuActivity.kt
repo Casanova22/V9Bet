@@ -64,7 +64,7 @@ class MenuActivity : AppCompatActivity() {
                 menuBg.visibility = View.VISIBLE
             }
             override fun onAnimationRepeat(animation:Animation) {}
-            override  fun onAnimationStart(animation:Animation) {}
+            override fun onAnimationStart(animation:Animation) {}
         })
         img.startAnimation(fadeIn)
     }

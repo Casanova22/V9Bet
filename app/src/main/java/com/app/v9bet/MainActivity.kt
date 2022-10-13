@@ -5,6 +5,7 @@ import android.animation.ArgbEvaluator
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import android.widget.Toast.LENGTH_LONG
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rvBoard: RecyclerView
     private lateinit var adapter: BoardAdapter
     private val boardSize: BoardSize = BoardSize.EASY
-
+    private var backToExit = false
     var alertDialog: AlertDialog? = null
     var alertDialog1: AlertDialog? = null
 
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
     private fun createDialog() {
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("You Win!")
@@ -85,10 +87,18 @@ class MainActivity : AppCompatActivity() {
         alertDialogBuilder1.setPositiveButton("Yes") {_: DialogInterface, _: Int ->
             finish()
         }
-        alertDialogBuilder1.setNegativeButton("Cancel") { dialogInterface: DialogInterface, i:Int ->
-            dialogInterface.cancel()
+        alertDialogBuilder1.setNegativeButton("Cancel") { _: DialogInterface, _:Int ->
+
         }
         alertDialog1 = alertDialogBuilder1.create()
+        if (backToExit){
+            super.finish()
+            return
+        }
+        this.backToExit = true
+        Toast.makeText(this,"Press again to exit",Toast.LENGTH_SHORT).show()
+        Handler().postDelayed({backToExit = false},2000)
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
