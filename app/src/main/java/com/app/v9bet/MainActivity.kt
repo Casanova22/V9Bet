@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: BoardAdapter
     private val boardSize: BoardSize = BoardSize.EASY
     private var backToExit = false
-    var alertDialog: AlertDialog? = null
-    var alertDialog1: AlertDialog? = null
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,40 +57,15 @@ class MainActivity : AppCompatActivity() {
         rvBoard.setHasFixedSize(true)
         rvBoard.layoutManager = GridLayoutManager(this, boardSize.getWidth())
 
-
-        createDialog()
-        onBackPressed()
     }
 
 
 
-    private fun createDialog() {
-        val alertDialogBuilder = AlertDialog.Builder(this)
-        alertDialogBuilder.setTitle("You Win!")
-        alertDialogBuilder.setMessage("Do you want to play again?")
-        alertDialogBuilder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
-            finish()
-        //            memoryGame.restartGame()
-        }
-        alertDialogBuilder.setNegativeButton("Cancel") { _: DialogInterface, i: Int ->
 
-        }
-        alertDialog = alertDialogBuilder.create()
-    }
 
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        val alertDialogBuilder1 = AlertDialog.Builder(this)
-        alertDialogBuilder1.setTitle("Exit game?")
-        alertDialogBuilder1.setMessage("Do you want to exit the game?")
-        alertDialogBuilder1.setPositiveButton("Yes") {_: DialogInterface, _: Int ->
-            finish()
-        }
-        alertDialogBuilder1.setNegativeButton("Cancel") { _: DialogInterface, _:Int ->
-
-        }
-        alertDialog1 = alertDialogBuilder1.create()
         if (backToExit){
             super.finish()
             return
@@ -98,7 +73,6 @@ class MainActivity : AppCompatActivity() {
         this.backToExit = true
         Toast.makeText(this,"Press again to exit",Toast.LENGTH_SHORT).show()
         Handler().postDelayed({backToExit = false},2000)
-
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -107,7 +81,6 @@ class MainActivity : AppCompatActivity() {
         if (memoryGame.haveWonGame()) {
             // alert the user invalid move
             Toast.makeText(applicationContext, "You already won!", LENGTH_LONG ).show()
-            alertDialog?.show()
             return
         }
         if (memoryGame.isCardFacedUp(position)) {
@@ -128,11 +101,8 @@ class MainActivity : AppCompatActivity() {
 //            tvNumPairs.text = "Pairs: ${memoryGame.numPairsFound} / ${boardSize.getNumPairs()}"
             if (memoryGame.haveWonGame()) {
                 Toast.makeText(applicationContext, "You Won! Congratulations. Press back to play again!", LENGTH_SHORT).show()
-                alertDialog?.show()
+
             }
-//            if (memoryGame.restartGame()){
-//                return
-//            }
         }
 //      tvNumMoves.text = "Moves: ${memoryGame.getNumMoves()}"
         adapter.notifyDataSetChanged()

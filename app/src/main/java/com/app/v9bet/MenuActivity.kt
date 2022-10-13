@@ -30,8 +30,7 @@ class MenuActivity : AppCompatActivity() {
         btn3 = findViewById(R.id.btn3)
         imageTitle = findViewById(R.id.imageTitle)
         menuBg = findViewById(R.id.menuBg)
-
-
+        
 //        menuBg.alpha = 0f
 //        menuBg.animate().alpha(1F).alphaBy(-50F).duration = 1000
 
